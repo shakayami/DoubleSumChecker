@@ -18,7 +18,10 @@ foreach(FILE ${TEST_FILES})
     add_library(src/${FILE}.cpp)
 endforeach()
 
+file(STRINGS "list.txt" TEST_FILES)
+
 foreach(TEST_NAME ${TEST_FILES})
+    message(STATUS "Registering test case: ${TEST_NAME}")
     add_executable(test_${TEST_NAME} tests/test_${TEST_NAME}.cpp)
     target_link_libraries(test_${TEST_NAME} DoubleSumChecker)
 endforeach()
