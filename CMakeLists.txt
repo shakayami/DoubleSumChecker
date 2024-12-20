@@ -12,3 +12,6 @@ add_library(DoubleSumChecker STATIC
 
 add_executable(test_AddDoubleSumChecker tests/test_AddDoubleSumChecker.cpp)
 target_link_libraries(test_AddDoubleSumChecker DoubleSumChecker)
+
+add_executable(test_MultiplyDoubleSumChecker tests/test_MultiplyDoubleSumChecker.cpp)
+target_link_libraries(test_MultiplyDoubleSumChecker DoubleSumChecker)
