@@ -23,12 +23,32 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y cmake g++ make
 
+      # 前回の失敗状態をキャッシュから確認
+      - name: Restore last run state
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: .last_run_status
+          key: last-run-status
+
       # 変更されたファイルを取得
       - name: Get changed test files
         id: changed_tests
         run: |
-          git diff --name-only HEAD^ HEAD > changed_files.txt || true
-          grep "tests/.*\.cpp" changed_files.txt | xargs -I{} basename {} > changed_tests.txt || true
+          if [ -f .last_run_status/failed ]; then
+            echo "Previous run failed, running all tests."
+            echo "::set-output name=run_all::true"
+          else
+            git diff --name-only HEAD^ HEAD > changed_files.txt || true
+            grep "tests/.*\.cpp" changed_files.txt | xargs -I{} basename {} > changed_tests.txt || true
+            if [ -s changed_tests.txt ]; then
+              echo "Detected changed test files."
+              echo "::set-output name=run_all::false"
+            else
+              echo "No test changes detected."
+              echo "::set-output name=run_all::true"
+            fi
+          fi
         shell: bash
 
       # プロジェクトのビルド
@@ -43,11 +63,27 @@ jobs:
       - name: Run tests
         run: |
           cd build
-          if [ -s ../changed_tests.txt ]; then
+          if [ "${{ steps.changed_tests.outputs.run_all }}" == "true" ]; then
+            echo "Running all tests."
+            for TEST in $(ls test_*); do
+              echo "Running $TEST"
+              ./$TEST || (echo "Test $TEST failed." && touch ../.last_run_status/failed)
+            done
+          else
             while read TEST; do
               echo "Running $TEST"
-              ./$TEST
+              ./$TEST || (echo "Test $TEST failed." && touch ../.last_run_status/failed)
             done < ../changed_tests.txt
-          else
-            echo "No relevant test cases to run."
           fi
+          if [ ! -f ../.last_run_status/failed ]; then
+            echo "All tests passed."
+            rm -f ../.last_run_status/failed
+          fi
+
+      # 状態をキャッシュ
+      - name: Save last run state
+        if: always()
+        uses: actions/cache@v3
+        with:
+          path: .last_run_status
+          key: last-run-status
