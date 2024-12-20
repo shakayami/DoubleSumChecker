@@ -1,5 +1,5 @@
-#ifndef ORDOUBLESUMCHECKER_HPP
-#define ORDOUBLESUMCHECKER_HPP
+#ifndef ORDOUBLESUMCHECKER_CPP
+#define ORDOUBLESUMCHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -38,4 +38,4 @@ class OrDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // ORDOUBLESUMCHECKER_HPP
+#endif // ORDOUBLESUMCHECKER_CPP

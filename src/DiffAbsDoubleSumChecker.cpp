@@ -1,5 +1,5 @@
-#ifndef DIFFABSDOUBLESUMCHECKER_HPP
-#define DIFFABSDOUBLESUMCHECKER_HPP
+#ifndef DIFFABSDOUBLESUMCHECKER_CPP
+#define DIFFABSDOUBLESUMCHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -32,4 +32,4 @@ class DiffAbsDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // DIFFABSDOUBLESUMCHECKER_HPP
+#endif // DIFFABSDOUBLESUMCHECKER_CPP

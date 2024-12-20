@@ -1,5 +1,5 @@
-#ifndef ADD_DOUBLE_SUM_CHECKER_HPP
-#define ADD_DOUBLE_SUM_CHECKER_HPP
+#ifndef ADD_DOUBLE_SUM_CHECKER_CPP
+#define ADD_DOUBLE_SUM_CHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -28,4 +28,4 @@ class AddDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // ADD_DOUBLE_SUM_CHECKER_HPP
+#endif // ADD_DOUBLE_SUM_CHECKER_CPP

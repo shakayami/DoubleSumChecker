@@ -1,5 +1,5 @@
-#ifndef XORDOUBLESUMCHECKER_HPP
-#define XORDOUBLESUMCHECKER_HPP
+#ifndef XORDOUBLESUMCHECKER_CPP
+#define XORDOUBLESUMCHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -38,4 +38,4 @@ class XorDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // XORDOUBLESUMCHECKER_HPP
+#endif // XORDOUBLESUMCHECKER_CPP

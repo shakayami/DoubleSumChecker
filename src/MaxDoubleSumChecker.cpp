@@ -1,5 +1,5 @@
-#ifndef MAXDOUBLESUMCHECKER_HPP
-#define MAXDOUBLESUMCHECKER_HPP
+#ifndef MAXDOUBLESUMCHECKER_CPP
+#define MAXDOUBLESUMCHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -32,4 +32,4 @@ class MaxDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // MAXDOUBLESUMCHECKER_HPP
+#endif // MAXDOUBLESUMCHECKER_CPP

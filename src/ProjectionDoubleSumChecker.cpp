@@ -1,5 +1,5 @@
-#ifndef PROJECTION_DOUBLE_SUM_CHECKER_HPP
-#define PROJECTION_DOUBLE_SUM_CHECKER_HPP
+#ifndef PROJECTION_DOUBLE_SUM_CHECKER_CPP
+#define PROJECTION_DOUBLE_SUM_CHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -28,4 +28,4 @@ class ProjectionDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // PROJECTION_DOUBLE_SUM_CHECKER_HPP
+#endif // PROJECTION_DOUBLE_SUM_CHECKER_CPP

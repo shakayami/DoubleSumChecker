@@ -1,5 +1,5 @@
-#ifndef ANDDOUBLESUMCHECKER_HPP
-#define ANDDOUBLESUMCHECKER_HPP
+#ifndef ANDDOUBLESUMCHECKER_CPP
+#define ANDDOUBLESUMCHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -38,4 +38,4 @@ class AndDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // ANDDOUBLESUMCHECKER_HPP
+#endif // ANDDOUBLESUMCHECKER_CPP

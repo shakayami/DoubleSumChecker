@@ -1,5 +1,5 @@
-#ifndef SUBDOUBLESUMCHECKER_HPP
-#define SUBDOUBLESUMCHECKER_HPP
+#ifndef SUBDOUBLESUMCHECKER_CPP
+#define SUBDOUBLESUMCHECKER_CPP
 
 #include "AbstractDoubleSumChecker.cpp"
 #include <random>
@@ -28,4 +28,4 @@ class SubDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // SUBDOUBLESUMCHECKER_HPP
+#endif // SUBDOUBLESUMCHECKER_CPP
