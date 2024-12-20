@@ -35,3 +35,6 @@ jobs:
           ./test_DiffSquareDoubleSumChecker
           ./test_MinDoubleSumChecker
           ./test_DiffAbsDoubleSumChecker
+          ./test_XorDoubleSumChecker
+          ./test_AndDoubleSumChecker
+          ./test_OrDoubleSumChecker

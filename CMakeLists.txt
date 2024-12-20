@@ -6,11 +6,14 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_library(DoubleSumChecker STATIC
     src/AbstractDoubleSumChecker.hpp
-    src/DiffAbsDoubleSumChecker.hpp
-    src/MinDoubleSumChecker.hpp
-    src/MaxDoubleSumChecker.hpp
-    src/DiffSquareDoubleSumChecker.hpp
-    src/SubDoubleSumChecker.hpp
+    src/OrDoubleSumChecker.cpp
+    src/AndDoubleSumChecker.cpp
+    src/XorDoubleSumChecker.cpp
+    src/DiffAbsDoubleSumChecker.cpp
+    src/MinDoubleSumChecker.cpp
+    src/MaxDoubleSumChecker.cpp
+    src/DiffSquareDoubleSumChecker.cpp
+    src/SubDoubleSumChecker.cpp
     src/AddDoubleSumChecker.cpp
     src/MultiplyDoubleSumChecker.cpp
     src/ConstDoubleSumChecker.cpp
@@ -43,4 +46,13 @@ target_link_libraries(test_MinDoubleSumChecker DoubleSumChecker)
 
 add_executable(test_DiffAbsDoubleSumChecker tests/test_DiffAbsDoubleSumChecker.cpp)
 target_link_libraries(test_DiffAbsDoubleSumChecker DoubleSumChecker)
+
+add_executable(test_XorDoubleSumChecker tests/test_XorDoubleSumChecker.cpp)
+target_link_libraries(test_XorDoubleSumChecker DoubleSumChecker)
+
+add_executable(test_AndDoubleSumChecker tests/test_AndDoubleSumChecker.cpp)
+target_link_libraries(test_AndDoubleSumChecker DoubleSumChecker)
+
+add_executable(test_OrDoubleSumChecker tests/test_OrDoubleSumChecker.cpp)
+target_link_libraries(test_OrDoubleSumChecker DoubleSumChecker)
 

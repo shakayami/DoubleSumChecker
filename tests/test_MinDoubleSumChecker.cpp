@@ -1,4 +1,4 @@
-#include "../src/MinDoubleSumChecker.hpp"
+#include "../src/MinDoubleSumChecker.cpp"
 #include <iostream>
 
 int main() {

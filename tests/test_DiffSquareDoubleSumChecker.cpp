@@ -1,4 +1,4 @@
-#include "../src/DiffSquareDoubleSumChecker.hpp"
+#include "../src/DiffSquareDoubleSumChecker.cpp"
 #include <iostream>
 
 int main() {

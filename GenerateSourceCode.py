@@ -17,6 +17,7 @@ class {CLASS_NAME} : public AbstractDoubleSumChecker<long long> {{
     }}
 
     T SolveFasterAlgorithm(const std::vector<T>& A) override {{
+        int N=A.size();
         T result = 0;
         // 高速アルゴリズムをここに実装
         return result;
@@ -33,7 +34,7 @@ class {CLASS_NAME} : public AbstractDoubleSumChecker<long long> {{
 #endif // {CLASS_NAME_UPPER}_HPP
 """
 
-test_template = """#include "../src/{CLASS_NAME}.hpp"
+test_template = """#include "../src/{CLASS_NAME}.cpp"
 #include <iostream>
 
 int main() {{
@@ -59,14 +60,14 @@ def generate_class_and_test(class_name):
     test_content = test_template.format(CLASS_NAME=class_name)
 
     # src フォルダにヘッダーファイルを作成
-    with open(f"src/{class_name}.hpp", "w") as class_file:
+    with open(f"src/{class_name}.cpp", "w") as class_file:
         class_file.write(class_content)
 
     # tests フォルダにテストファイルを作成
     with open(f"tests/test_{class_name}.cpp", "w") as test_file:
         test_file.write(test_content)
 
-    print(f"Generated {class_name}.hpp and test_{class_name}.cpp")
+    print(f"Generated {class_name}.cpp and test_{class_name}.cpp")
 
 def update_cmake(class_name):
     cmake_file = "CMakeLists.txt"
@@ -76,7 +77,7 @@ def update_cmake(class_name):
         lines = f.readlines()
 
     # 新しいエントリを追加
-    library_entry = f"    src/{class_name}.hpp\n"
+    library_entry = f"    src/{class_name}.cpp\n"
     test_entry = f"add_executable(test_{class_name} tests/test_{class_name}.cpp)\n"
     target_entry = f"target_link_libraries(test_{class_name} DoubleSumChecker)\n"
 
