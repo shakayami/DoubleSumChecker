@@ -9,15 +9,27 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+
     steps:
+      # リポジトリのチェックアウト
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 必要なツールをインストール
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake g++ make
 
+      # 変更されたファイルを取得
+      - name: Get changed test files
+        id: changed_tests
+        run: |
+          git diff --name-only HEAD^ HEAD > changed_files.txt
+          grep "tests/.*\.cpp" changed_files.txt | xargs -I{} basename {} > changed_tests.txt
+        shell: bash
+
+      # プロジェクトのビルド
       - name: Build project
         run: |
           mkdir -p build
@@ -25,16 +37,11 @@ jobs:
           cmake ..
           cmake --build .
 
+      # テストの実行
       - name: Run tests
         run: |
           cd build
-          ./test_AddDoubleSumChecker
-          ./test_MultiplyDoubleSumChecker
-          ./test_ConstDoubleSumChecker
-          ./test_ProjectionDoubleSumChecker
-          ./test_DiffSquareDoubleSumChecker
-          ./test_MinDoubleSumChecker
-          ./test_DiffAbsDoubleSumChecker
-          ./test_XorDoubleSumChecker
-          ./test_AndDoubleSumChecker
-          ./test_OrDoubleSumChecker
+          while read TEST; do
+            echo "Running $TEST"
+            ./$TEST
+          done < ../changed_tests.txt

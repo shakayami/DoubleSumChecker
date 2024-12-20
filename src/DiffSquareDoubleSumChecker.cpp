@@ -1,7 +1,7 @@
 #ifndef DIFFSQUAREDOUBLESUMCHECKER_HPP
 #define DIFFSQUAREDOUBLESUMCHECKER_HPP
 
-#include "AbstractDoubleSumChecker.hpp"
+#include "AbstractDoubleSumChecker.cpp"
 #include <random>
 
 class DiffSquareDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
@@ -25,7 +25,7 @@ class DiffSquareDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     T RandomElementGenerator() override {
         static std::random_device seed_gen;
         static std::mt19937 engine(seed_gen());
-        std::uniform_int_distribution<T> dist(1, 100);
+        std::uniform_int_distribution<T> dist(1, 1000000);
         return dist(engine);
     }
 };

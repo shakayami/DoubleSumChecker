@@ -1,7 +1,7 @@
 #ifndef ADD_DOUBLE_SUM_CHECKER_HPP
 #define ADD_DOUBLE_SUM_CHECKER_HPP
 
-#include "AbstractDoubleSumChecker.hpp"
+#include "AbstractDoubleSumChecker.cpp"
 #include <random>
 
 class AddDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
@@ -23,7 +23,7 @@ class AddDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     T RandomElementGenerator() override {
         static std::random_device seed_gen;
         static std::mt19937 engine(seed_gen());
-        std::uniform_int_distribution<T> dist(0, 1e9);
+        std::uniform_int_distribution<T> dist(0, 1000000000);
         return dist(engine);
     }
 };

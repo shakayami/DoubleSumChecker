@@ -1,7 +1,7 @@
 #ifndef MAXDOUBLESUMCHECKER_HPP
 #define MAXDOUBLESUMCHECKER_HPP
 
-#include "AbstractDoubleSumChecker.hpp"
+#include "AbstractDoubleSumChecker.cpp"
 #include <random>
 #include <algorithm>
 class MaxDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
@@ -27,7 +27,7 @@ class MaxDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     T RandomElementGenerator() override {
         static std::random_device seed_gen;
         static std::mt19937 engine(seed_gen());
-        std::uniform_int_distribution<T> dist(1, 100);
+        std::uniform_int_distribution<T> dist(1, 1000000000);
         return dist(engine);
     }
 };

@@ -1,0 +1,10 @@
+AddDoubleSumChecker
+MultiplyDoubleSumChecker
+ConstDoubleSumChecker
+ProjectionDoubleSumChecker
+DiffSquareDoubleSumChecker
+MinDoubleSumChecker
+DiffAbsDoubleSumChecker
+XorDoubleSumChecker
+AndDoubleSumChecker
+OrDoubleSumChecker
