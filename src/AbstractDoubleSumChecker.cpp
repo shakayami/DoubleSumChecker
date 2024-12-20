@@ -1,7 +1,8 @@
-#ifndef ABSTRACT_DOUBLE_SUM_CHECKER_HPP
-#define ABSTRACT_DOUBLE_SUM_CHECKER_HPP
+#ifndef ABSTRACT_DOUBLE_SUM_CHECKER_CPP
+#define ABSTRACT_DOUBLE_SUM_CHECKER_CPP
 
 #include <vector>
+#include <iostream>
 
 template<typename T>
 class AbstractDoubleSumChecker {
@@ -32,4 +33,4 @@ public:
     }
 };
 
-#endif // ABSTRACT_DOUBLE_SUM_CHECKER_HPP
+#endif // ABSTRACT_DOUBLE_SUM_CHECKER_CPP

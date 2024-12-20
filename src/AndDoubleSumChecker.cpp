@@ -15,8 +15,8 @@ class AndDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
         int N=A.size();
         T result = 0;
         for(int k=0;k<63;k++){
-            int X=0;
-            int Y=0;
+            long long int X=0;
+            long long int Y=0;
             for(int i=0;i<N;++i){
                 if ((A[i]>>k)&1){
                     X++;
