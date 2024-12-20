@@ -1,9 +1,11 @@
 AddDoubleSumChecker
+SubDoubleSumChecker
 MultiplyDoubleSumChecker
 ConstDoubleSumChecker
 ProjectionDoubleSumChecker
 DiffSquareDoubleSumChecker
 MinDoubleSumChecker
+MaxDoubleSumChecker
 DiffAbsDoubleSumChecker
 XorDoubleSumChecker
 AndDoubleSumChecker
