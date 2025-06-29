@@ -1,4 +1,4 @@
-#include "../src/MaxDoubleSumChecker.cpp"
+#include "../src/MaxDoubleSumChecker.hpp"
 #include <iostream>
 
 int main() {

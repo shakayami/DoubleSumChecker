@@ -1,23 +1,19 @@
-#ifndef ADD_DOUBLE_SUM_CHECKER_CPP
-#define ADD_DOUBLE_SUM_CHECKER_CPP
+#ifndef CONST_DOUBLE_SUM_CHECKER_CPP
+#define CONST_DOUBLE_SUM_CHECKER_CPP
 
-#include "AbstractDoubleSumChecker.cpp"
+#include "AbstractDoubleSumChecker.hpp"
 #include <random>
 
-class AddDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
+class ConstDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     using T = long long;
 
     T func(T x, T y) override {
-        return x + y;
+        return 1;
     }
 
     T SolveFasterAlgorithm(const std::vector<T>& A) override {
-        T sum = 0;
         int N = A.size();
-        for (const auto& val : A) {
-            sum += (N - 1) * val;
-        }
-        return sum;
+        return N * (N - 1) / 2;
     }
 
     T RandomElementGenerator() override {
@@ -28,4 +24,4 @@ class AddDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // ADD_DOUBLE_SUM_CHECKER_CPP
+#endif // CONST_DOUBLE_SUM_CHECKER_CPP

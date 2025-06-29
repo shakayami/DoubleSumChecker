@@ -1,4 +1,4 @@
-#include "../src/SubDoubleSumChecker.cpp"
+#include "../src/SubDoubleSumChecker.hpp"
 #include <iostream>
 
 int main() {

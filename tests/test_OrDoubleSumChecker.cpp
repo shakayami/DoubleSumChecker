@@ -1,4 +1,4 @@
-#include "../src/OrDoubleSumChecker.cpp"
+#include "../src/OrDoubleSumChecker.hpp"
 #include <iostream>
 
 int main() {

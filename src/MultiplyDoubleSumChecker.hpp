@@ -1,7 +1,7 @@
 #ifndef MULTIPLY_DOUBLE_SUM_CHECKER_CPP
 #define MULTIPLY_DOUBLE_SUM_CHECKER_CPP
 
-#include "AbstractDoubleSumChecker.cpp"
+#include "AbstractDoubleSumChecker.hpp"
 #include <random>
 
 class MultiplyDoubleSumChecker : public AbstractDoubleSumChecker<long long> {

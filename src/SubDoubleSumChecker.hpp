@@ -1,27 +1,22 @@
-#ifndef MINDOUBLESUMCHECKER_CPP
-#define MINDOUBLESUMCHECKER_CPP
+#ifndef SUBDOUBLESUMCHECKER_CPP
+#define SUBDOUBLESUMCHECKER_CPP
 
-#include "AbstractDoubleSumChecker.cpp"
+#include "AbstractDoubleSumChecker.hpp"
 #include <random>
-#include <algorithm>
 
-class MinDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
+class SubDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     using T = long long;
 
     T func(T x, T y) override {
-        return std::min(x,y);
+        return x-y;
     }
 
     T SolveFasterAlgorithm(const std::vector<T>& A) override {
         T result = 0;
         int N=A.size();
-        std::vector<T> A_copy(N);
-        std::copy(A.begin(),A.end(),A_copy.begin());
-        std::sort(A_copy.begin(),A_copy.end());
         for(int i=0;i<N;++i){
-            result+=(N-1-i)*A_copy[i];
+            result+=(N-2*i-1)*A[i];
         }
-
         return result;
     }
 
@@ -33,4 +28,4 @@ class MinDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // MINDOUBLESUMCHECKER_CPP
+#endif // SUBDOUBLESUMCHECKER_CPP

@@ -1,14 +1,15 @@
-#ifndef MAXDOUBLESUMCHECKER_CPP
-#define MAXDOUBLESUMCHECKER_CPP
+#ifndef DIFFABSDOUBLESUMCHECKER_CPP
+#define DIFFABSDOUBLESUMCHECKER_CPP
 
-#include "AbstractDoubleSumChecker.cpp"
+#include "AbstractDoubleSumChecker.hpp"
 #include <random>
 #include <algorithm>
-class MaxDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
+
+class DiffAbsDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     using T = long long;
 
     T func(T x, T y) override {
-        return std::max(x,y);
+        return abs(x-y);
     }
 
     T SolveFasterAlgorithm(const std::vector<T>& A) override {
@@ -17,9 +18,8 @@ class MaxDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
         std::vector<T> A_copy(N);
         std::copy(A.begin(),A.end(),A_copy.begin());
         std::sort(A_copy.begin(),A_copy.end());
-
-        for(int i=0;i<N;++i){
-            result+=i*A_copy[i];
+        for(int i=0;i<N;i++){
+            result+=(2*i+1-N)*A_copy[i];
         }
         return result;
     }
@@ -32,4 +32,4 @@ class MaxDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // MAXDOUBLESUMCHECKER_CPP
+#endif // DIFFABSDOUBLESUMCHECKER_CPP

@@ -8,14 +8,14 @@ set(CMAKE_CXX_STANDARD 17)
 
 # ライブラリのビルド
 add_library(DoubleSumChecker STATIC
-    src/AbstractDoubleSumChecker.cpp
+    src/AbstractDoubleSumChecker.hpp
 )
 
 # テストケースリストファイルを読み込む
 file(STRINGS "list.txt" FILES)
 
 foreach(FILE ${TEST_FILES})
-    add_library(src/${FILE}.cpp)
+    add_library(src/${FILE}.hpp)
 endforeach()
 
 file(STRINGS "list.txt" TEST_FILES)

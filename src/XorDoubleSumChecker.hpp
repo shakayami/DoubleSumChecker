@@ -1,14 +1,14 @@
-#ifndef ORDOUBLESUMCHECKER_CPP
-#define ORDOUBLESUMCHECKER_CPP
+#ifndef XORDOUBLESUMCHECKER_CPP
+#define XORDOUBLESUMCHECKER_CPP
 
-#include "AbstractDoubleSumChecker.cpp"
+#include "AbstractDoubleSumChecker.hpp"
 #include <random>
 
-class OrDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
+class XorDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     using T = long long;
 
     T func(T x, T y) override {
-        return x|y;
+        return x^y;
     }
 
     T SolveFasterAlgorithm(const std::vector<T>& A) override {
@@ -25,7 +25,7 @@ class OrDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
                     Y++;
                 }
             }
-            result+=(X*Y+(X*(X-1)/2))<<k;
+            result+=(X*Y)<<k;
         }
         return result;
     }
@@ -38,4 +38,4 @@ class OrDoubleSumChecker : public AbstractDoubleSumChecker<long long> {
     }
 };
 
-#endif // ORDOUBLESUMCHECKER_CPP
+#endif // XORDOUBLESUMCHECKER_CPP

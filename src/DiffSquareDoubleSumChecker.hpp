@@ -1,7 +1,7 @@
 #ifndef DIFFSQUAREDOUBLESUMCHECKER_CPP
 #define DIFFSQUAREDOUBLESUMCHECKER_CPP
 
-#include "AbstractDoubleSumChecker.cpp"
+#include "AbstractDoubleSumChecker.hpp"
 #include <random>
 
 class DiffSquareDoubleSumChecker : public AbstractDoubleSumChecker<long long> {

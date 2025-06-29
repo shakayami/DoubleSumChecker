@@ -6,7 +6,7 @@ import yaml
 class_template = """#ifndef {CLASS_NAME_UPPER}_CPP
 #define {CLASS_NAME_UPPER}_CPP
 
-#include "AbstractDoubleSumChecker.cpp"
+#include "AbstractDoubleSumChecker.hpp"
 #include <random>
 
 class {CLASS_NAME} : public AbstractDoubleSumChecker<long long> {{
@@ -34,7 +34,7 @@ class {CLASS_NAME} : public AbstractDoubleSumChecker<long long> {{
 #endif // {CLASS_NAME_UPPER}_CPP
 """
 
-test_template = """#include "../src/{CLASS_NAME}.cpp"
+test_template = """#include "../src/{CLASS_NAME}.hpp"
 #include <iostream>
 
 int main() {{
@@ -60,14 +60,14 @@ def generate_class_and_test(class_name):
     test_content = test_template.format(CLASS_NAME=class_name)
 
     # src フォルダにヘッダーファイルを作成
-    with open(f"src/{class_name}.cpp", "w") as class_file:
+    with open(f"src/{class_name}.hpp", "w") as class_file:
         class_file.write(class_content)
 
     # tests フォルダにテストファイルを作成
     with open(f"tests/test_{class_name}.cpp", "w") as test_file:
         test_file.write(test_content)
 
-    print(f"Generated {class_name}.cpp and test_{class_name}.cpp")
+    print(f"Generated {class_name}.hpp and test_{class_name}.cpp")
 
 def add_test_to_list(class_name):
     LIST_PATH = "list.txt"

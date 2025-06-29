@@ -1,4 +1,4 @@
-#include "../src/XorDoubleSumChecker.cpp"
+#include "../src/XorDoubleSumChecker.hpp"
 #include <iostream>
 
 int main() {

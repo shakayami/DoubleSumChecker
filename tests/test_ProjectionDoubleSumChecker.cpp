@@ -1,4 +1,4 @@
-#include "../src/ProjectionDoubleSumChecker.cpp"
+#include "../src/ProjectionDoubleSumChecker.hpp"
 #include <iostream>
 
 int main() {
