@@ -11,29 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # リポジトリのチェックアウト
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 必要なツールをインストール
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake g++ make
 
-      # プロジェクトをビルド
-      - name: Build project
+      - name: Configure and build
         run: |
-          mkdir -p build
-          cd build
-          cmake ..
-          cmake --build .
+          cmake -S . -B build
+          cmake --build build
 
-      # list.txt からテストを実行
-      - name: Run all tests from list.txt
+      - name: Run C++ unit tests
         run: |
-          cd build
-          while read TEST; do
-            echo "Running $TEST"
-            ./test_$TEST || exit 1
-          done < ../list.txt
+          ctest --test-dir build --output-on-failure
