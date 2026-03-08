@@ -3,7 +3,7 @@
 参考記事: https://shakayami.hatenablog.com/entry/2021/01/01/044946
 
 ## 現在の実装状況
-- C++ 実装: `list.txt` にある 18 種類（Add/Sub/Multiply/Const/Projection/DiffSquare/Min/Max/DiffAbs/Xor/And/Or/Nand/Nor/Gcd/Equal/SquareSum/SumSquare）
+- C++ 実装: `list.txt` にある 19 種類（Add/Sub/Multiply/Const/Projection/DiffSquare/Min/Max/DiffAbs/Xor/And/Or/Nand/Nor/Gcd/Equal/SquareSum/SumSquare/CubeSum）
 - C++ 単体テスト: `tests/` に各実装ごとのテストを用意（失敗時に最小反例を表示）
 - CI: GitHub Actions で CMake + CTest を実行
 
