@@ -12,3 +12,7 @@ AndDoubleSumChecker
 OrDoubleSumChecker
 NandDoubleSumChecker
 NorDoubleSumChecker
+GcdDoubleSumChecker
+EqualDoubleSumChecker
+SquareSumDoubleSumChecker
+SumSquareDoubleSumChecker
