@@ -11,3 +11,4 @@ XorDoubleSumChecker
 AndDoubleSumChecker
 OrDoubleSumChecker
 SquareSumDoubleSumChecker
+SumSquareDoubleSumChecker
