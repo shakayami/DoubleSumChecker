@@ -22,6 +22,7 @@
 | Equal | `[x == y]` | `src/EqualDoubleSumChecker.cpp` | `tests/test_EqualDoubleSumChecker.cpp` | ✅ 実装済み |
 | SquareSum | `x^2 + y^2` | `src/SquareSumDoubleSumChecker.cpp` | `tests/test_SquareSumDoubleSumChecker.cpp` | ✅ 実装済み |
 | SumSquare | `(x + y)^2` | `src/SumSquareDoubleSumChecker.cpp` | `tests/test_SumSquareDoubleSumChecker.cpp` | ✅ 実装済み |
+| CubeSum | `x^3 + y^3` | `src/CubeSumDoubleSumChecker.cpp` | `tests/test_CubeSumDoubleSumChecker.cpp` | ✅ 実装済み |
 
 ## 次に進める作業
 

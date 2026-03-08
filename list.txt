@@ -16,3 +16,4 @@ GcdDoubleSumChecker
 EqualDoubleSumChecker
 SquareSumDoubleSumChecker
 SumSquareDoubleSumChecker
+CubeSumDoubleSumChecker
