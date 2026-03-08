@@ -10,6 +10,8 @@ DiffAbsDoubleSumChecker
 XorDoubleSumChecker
 AndDoubleSumChecker
 OrDoubleSumChecker
+NandDoubleSumChecker
+NorDoubleSumChecker
 GcdDoubleSumChecker
 EqualDoubleSumChecker
 SquareSumDoubleSumChecker
