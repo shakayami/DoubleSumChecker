@@ -3,7 +3,7 @@
 参考記事: https://shakayami.hatenablog.com/entry/2021/01/01/044946
 
 ## 現在の実装状況
-- C++ 実装: `list.txt` にある 13 種類（Add/Sub/Multiply/Const/Projection/DiffSquare/Min/Max/DiffAbs/Xor/And/Or/SquareSum/SumSquare）
+- C++ 実装: `list.txt` にある 18 種類（Add/Sub/Multiply/Const/Projection/DiffSquare/Min/Max/DiffAbs/Xor/And/Or/Nand/Nor/Gcd/Equal/SquareSum/SumSquare）
 - C++ 単体テスト: `tests/` に各実装ごとのテストを用意（失敗時に最小反例を表示）
 - CI: GitHub Actions で CMake + CTest を実行
 
@@ -15,7 +15,7 @@
 3. ✅ 失敗時に最小反例が分かるよう、テスト出力を改善
 
 ### Phase 2: 問題網羅（C++）
-1. 参考記事にある式変形パターンを表形式で列挙
+1. ✅ 参考記事にある式変形パターンを表形式で列挙（`docs/pattern-matrix.md`）
 2. 未実装パターンを `src/` に追加
 3. 同数のテストを `tests/` に追加して回帰防止
 
@@ -41,3 +41,6 @@
 1. ランダムテスト（プロパティベーステスト）を追加
 2. ベンチマークを導入して競プロ制約を満たすことを確認
 3. ドキュメントに「実装済み/未実装マトリクス」を公開
+
+## 補助ドキュメント
+- 実装済み/未実装マトリクス: `docs/pattern-matrix.md`
