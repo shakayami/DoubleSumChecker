@@ -4,15 +4,15 @@
 
 ## 現在の実装状況
 - C++ 実装: `list.txt` にある 13 種類（Add/Sub/Multiply/Const/Projection/DiffSquare/Min/Max/DiffAbs/Xor/And/Or/SquareSum/SumSquare）
-- C++ 単体テスト: `tests/` に各実装ごとのテストを用意
+- C++ 単体テスト: `tests/` に各実装ごとのテストを用意（失敗時に最小反例を表示）
 - CI: GitHub Actions で CMake + CTest を実行
 
 ## 今後のタスク分解（全制覇に向けたロードマップ）
 
-### Phase 1: C++ 基盤の安定化
-1. CMake/CTest を唯一のテスト実行経路として固定
-2. `list.txt` と `tests/` の整合性チェックを追加（欠落テスト検出）
-3. 失敗時に最小反例が分かるよう、テスト出力を改善
+### Phase 1: C++ 基盤の安定化（完了）
+1. ✅ CMake/CTest を唯一のテスト実行経路として固定
+2. ✅ `list.txt` と `tests/` の整合性チェックを追加（欠落テスト検出）
+3. ✅ 失敗時に最小反例が分かるよう、テスト出力を改善
 
 ### Phase 2: 問題網羅（C++）
 1. 参考記事にある式変形パターンを表形式で列挙
