@@ -10,6 +10,14 @@ func TestAddAgent(t *testing.T) {
 	}
 }
 
+func TestSubAgent(t *testing.T) {
+	agent := SubAgentChecker{}
+	data := []int64{10, 4, 2, 1}
+	if agent.HasMismatch(data) {
+		t.Fatalf("sub agent mismatch")
+	}
+}
+
 func TestMultiplyAgent(t *testing.T) {
 	agent := MultiplyAgentChecker{}
 	data := []int64{2, 3, 5, 7}
