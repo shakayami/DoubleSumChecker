@@ -1,0 +1,46 @@
+# 依存関係の自動更新。
+# cooldown: 公開から 7 日未満の版は取り込まない (乗っ取られた版を掴まないための
+# サプライチェーン攻撃対策。python/pyproject.toml の [tool.uv] exclude-newer と同じ 7 日)。
+version: 2
+updates:
+  - package-ecosystem: "cargo"
+    directory: "/rust"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    groups:
+      cargo:
+        patterns: ["*"]
+
+  - package-ecosystem: "gomod"
+    directory: "/go"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    groups:
+      gomod:
+        patterns: ["*"]
+
+  # 今は外部依存なし。足したときに更新されるように入れておく
+  - package-ecosystem: "pip"
+    directory: "/python"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    groups:
+      python:
+        patterns: ["*"]
+
+  # ワークフローで使う GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ["*"]
